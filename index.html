@@ -90,6 +90,23 @@
             height: 100%;
             background: linear-gradient(90deg, rgba(30, 58, 95, 0.85) 0%, rgba(30, 58, 95, 0.7) 100%);
         }
+
+        .hero-section-banner {
+            min-height: 100vh;
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section-banner {
+                background-size: cover;
+                background-color: #222;
+                min-height: 60vh;
+                background-position: center center;
+            }
+        }
         
         .section-title {
             font-size: 2.5rem;
@@ -378,7 +395,7 @@
                         subtitle: "Unidos por el desarrollo, la seguridad y el bienestar de nuestra comunidad.",
                         buttonText: "Conoce Nuestros Proyectos",
                         buttonLink: "#gestiones",
-                        imageUrl: "assets/banner.png"
+                        imageUrl: "assets/banner_2.jpg"
                     },
                     stats: [
                         { number: '7,000+', text: 'Habitantes' },
@@ -400,7 +417,7 @@
                 historia: {
                     title: 'Nuestra Historia',
                     subtitle: 'Conoce los orígenes y evolución de nuestro querido pueblo',
-                    imageUrl: 'https://placehold.co/576x382/1e3a5f/ffffff?text=VSS',
+                    imageUrl: 'assets/banner_0.jpg',
                     mainText: 'La Villa Santa Sofía se ubica en la costa norte de Perú, en la margen derecha del río Chira. Este hermoso pueblo perteneció desde sus inicios en la quincena de abril de 1936, al distrito de Tamarindo. Luego en 1965, al crearse el distrito de Ignacio Escudero pasó a pertenecer políticamente a este distrito de la provincia de Sullana.',
                     milestones: [
                         { year: '1936', title: 'Fundación', text: 'Santa Sofía inicia como parte del distrito de Tamarindo, estableciéndose como una comunidad próspera.' },
@@ -424,9 +441,9 @@
                     title: 'Nuestras Gestiones',
                     subtitle: 'Seguimiento transparente de nuestros proyectos y logros más importantes para la comunidad.',
                     projects: [
-                        { title: 'Mejoramiento de Vías', status: 'En Ejecución', description: 'Modernización y pavimentación de las principales calles para mejorar la transitabilidad.', imageUrl: 'https://images.unsplash.com/photo-1541832067-803215024766?q=80&w=400&auto=format&fit=crop', progress: 65 },
-                        { title: 'Centro de Salud Comunitario', status: 'Planificado', description: 'Construcción de un nuevo centro de salud para ampliar la cobertura médica en la zona.', imageUrl: 'https://images.unsplash.com/photo-1586773860414-72d22b88e5a2?q=80&w=400&auto=format&fit=crop', progress: 0 },
-                        { title: 'Parque Recreacional Central', status: 'Completado', description: 'Creación de un espacio verde para el esparcimiento familiar y la práctica deportiva.', imageUrl: 'https://images.unsplash.com/photo-1610065091214-4695b875223e?q=80&w=400&auto=format&fit=crop', progress: 100 }
+                        { title: 'Mejoramiento de Vías', status: 'En Ejecución', description: 'Modernización y pavimentación de las principales calles para mejorar la transitabilidad.', imageUrl: 'assets/mejoramiento-de-las-vias-vehiculares.jpg', progress: 65 },
+                        { title: 'Centro de Salud Comunitario', status: 'Planificado', description: 'Construcción de un nuevo centro de salud para ampliar la cobertura médica en la zona.', imageUrl: 'assets/centro-salud.jpg', progress: 0 },
+                        { title: 'Parque Recreacional Central', status: 'Completado', description: 'Creación de un espacio verde para el esparcimiento familiar y la práctica deportiva.', imageUrl: 'assets/parque_recreacional.jpg', progress: 100 }
                     ]
                 },
                 servicios: {
@@ -445,16 +462,16 @@
                     title: 'Últimas Noticias y Anuncios',
                     subtitle: 'Mantente informado sobre los comunicados y novedades más recientes de nuestra municipalidad.',
                     items: [
-                        { title: 'Importante: Reunión Vecinal sobre Seguridad', date: '10 de Septiembre, 2025', content: 'Se convoca a todos los vecinos a la reunión sobre el nuevo plan de seguridad ciudadana que se realizará este viernes en el auditorio municipal.', imageUrl: 'https://images.unsplash.com/photo-1617223000908-174806a48f4b?q=80&w=400&auto=format&fit=crop' },
-                        { title: 'Nuevo Horario de Atención Municipal', date: '8 de Septiembre, 2025', content: 'A partir del lunes 15 de septiembre, la atención en ventanilla será de 8:00 am a 3:00 pm de lunes a viernes.', imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=400&auto=format&fit=crop' },
-                        { title: 'Gran Campaña de Limpieza General "Santa Sofía Limpia"', date: '5 de Septiembre, 2025', content: 'Este sábado 20 de septiembre participa en la gran campaña de limpieza "Santa Sofía Limpia y Saludable". ¡Te esperamos!', imageUrl: 'https://images.unsplash.com/photo-1611244419357-124d4218155a?q=80&w=400&auto=format&fit=crop' }
+                        { title: 'Importante: Reunión Vecinal sobre Seguridad', date: '10 de Septiembre, 2025', content: 'Se convoca a todos los vecinos a la reunión sobre el nuevo plan de seguridad ciudadana que se realizará este viernes en el auditorio municipal.', imageUrl: 'assets/reunion_vecinal.jpeg' },
+                        { title: 'Nuevo Horario de Atención Municipal', date: '8 de Septiembre, 2025', content: 'A partir del lunes 15 de septiembre, la atención en ventanilla será de 8:00 am a 3:00 pm de lunes a viernes.', imageUrl: 'assets/atencion.jpg' },
+                        { title: 'Gran Campaña de Limpieza General "Santa Sofía Limpia"', date: '5 de Septiembre, 2025', content: 'Este sábado 20 de septiembre participa en la gran campaña de limpieza "Santa Sofía Limpia y Saludable". ¡Te esperamos!', imageUrl: 'assets/campania_limpieza.jpeg' }
                     ]
                 },
                 eventos: {
                     title: 'Próximos Eventos',
                     subtitle: 'Actividades programadas para nuestra comunidad',
                     items: [
-                        { title: 'Feria Gastronómica "Sabores de mi Tierra"', date: '25 de Septiembre', time: '4:00 PM', location: 'Plaza Principal', imageUrl: 'https://images.unsplash.com/photo-1579630389953-248c88e5352c?q=80&w=400&auto=format&fit=crop' },
+                        { title: 'Feria Gastronómica "Sabores de mi Tierra"', date: '25 de Septiembre', time: '4:00 PM', location: 'Plaza Principal', imageUrl: 'assets/feria.jpg' },
                         { title: 'Campeonato Deportivo Interbarrios', date: '02 de Octubre', time: '8:00 AM', location: 'Complejo Deportivo', imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=400&auto=format&fit=crop' },
                         { title: 'Taller para Emprendedores', date: '15 de Octubre', time: '2:00 PM', location: 'Auditorio Municipal', imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop' }
                     ]
@@ -530,11 +547,8 @@
                 let contentHtml = '';
 
                 if (key === 'inicio') {
-                    section.className = 'section hero-section relative text-white text-center';
+                    section.className = 'section hero-section hero-section-banner relative text-white text-center';
                     section.style.backgroundImage = `url('${sectionData.hero.imageUrl}')`;
-                    section.style.backgroundPosition = 'top';
-                    section.style.backgroundSize = 'auto';
-                    section.style.backgroundRepeat = 'no-repeat';
                     contentHtml = `
                         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
                             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">${sectionData.hero.title}</h1>
@@ -630,8 +644,8 @@
                             break;
 
                         case 'autoridades':
-                            contentHtml += `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                                <div class="sm:col-span-2 lg:col-span-4 card bg-white border border-slate-100 rounded-lg p-8 flex flex-col md:flex-row items-center gap-8 mb-8">
+                            contentHtml += `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+                                <div class="sm:col-span-2 lg:col-span-4 card bg-white border border-slate-100 rounded-lg p-8 flex flex-col md:flex-row items-center gap-8 mb-1">
                                     <img src="${sectionData.alcalde.imageUrl}" class="w-40 h-40 rounded-full object-cover flex-shrink-0 border-4 border-orange-100">
                                     <div class="text-center md:text-left">
                                         <h3 class="text-2xl font-bold text-orange-600">Alcalde</h3>
