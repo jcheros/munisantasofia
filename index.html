@@ -533,7 +533,8 @@
                     section.className = 'section hero-section relative text-white text-center';
                     section.style.backgroundImage = `url('${sectionData.hero.imageUrl}')`;
                     section.style.backgroundPosition = 'top';
-                    section.style.backgroundSize = 'contain';
+                    section.style.backgroundSize = 'auto';
+                    section.style.backgroundRepeat = 'no-repeat';
                     contentHtml = `
                         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
                             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">${sectionData.hero.title}</h1>
