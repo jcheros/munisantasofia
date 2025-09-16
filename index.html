@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipalidad de Centro Poblado Santa Sofía | Piura, Perú</title>
+    <meta name="description" content="Sitio oficial de la Municipalidad de Centro Poblado Santa Sofía, ubicado en Sullana, Piura. Conoce nuestras gestiones, autoridades y servicios municipales.">
+    <meta name="keywords" content="municipalidad, santa sofia, sullana, piura, perú, gobierno local, alcalde, regidores">
+    <meta name="author" content="Municipalidad de Centro Poblado Santa Sofía">
+    <meta property="og:title" content="Municipalidad de Centro Poblado Santa Sofía">
+    <meta property="og:description" content="Sitio oficial de la Municipalidad de Centro Poblado Santa Sofía">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #f97316;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --accent: #3b82f6;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #334155;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .nav-link.active {
+            color: var(--secondary);
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(30, 58, 95, 0.85) 0%, rgba(30, 58, 95, 0.7) 100%);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            color: #64748b;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 26px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .progress-value {
+            height: 100%;
+            background-color: var(--secondary);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgba(249, 115, 22, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 60px;
+            color: #f1f5f9;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .counter-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .counter-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .counter-text {
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .announcement-card:hover .announcement-title {
+            color: var(--secondary);
+        }
+        
+        /* Mobile menu animation */
+        #mobile-menu {
+            transition: all 0.3s ease;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <!-- Top Bar -->
+        <div id="top-bar" class="bg-[#1e3a5f] text-white text-sm py-2">
+            <!-- Top bar content will be injected by JavaScript -->
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="https://placehold.co/80x80/1e3a5f/ffffff?text=SS" alt="Logo Municipalidad" id="logo" class="h-14 w-14 rounded-full border-2 border-[#1e3a5f] p-1">
+                    <div class="logo-text">
+                        <h1 class="text-lg md:text-xl font-bold tracking-tight text-[#1e3a5f]">Municipalidad C.P. Santa Sofía</h1>
+                        <p class="text-xs md:text-sm text-slate-500">Ignacio Escudero</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8" id="desktop-nav">
+                    <!-- Links will be injected by JavaScript -->
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-700 hover:text-orange-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-200 shadow-lg">
+            <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3" id="mobile-nav">
+                <!-- Mobile links will be injected by JavaScript -->
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Sections will be rendered here by JavaScript -->
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-[#1e3a5f] text-white">
+        <!-- CTA Section -->
+        <div id="footer-cta" class="bg-[#f97316]">
+            <!-- Footer CTA will be injected by JavaScript -->
+        </div>
+
+        <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div id="footer-content" class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Footer content will be injected by JavaScript -->
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-8 text-center text-slate-300 text-sm">
+                <p>&copy; 2025 Municipalidad de Centro Poblado Santa Sofía. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // ===================================================================================
+        //       CONFIGURACIÓN CENTRAL DEL SITIO WEB
+        // ===================================================================================
+        const siteData = {
+            logoUrl: "https://placehold.co/80x80/1e3a5f/ffffff?text=SS",
+            topBar: {
+                phone: '+51 073 123456',
+                email: 'contacto@santasofia.gob.pe',
+                social: [
+                    { name: 'Facebook', url: '#', icon: '<i class="fab fa-facebook-f"></i>' },
+                    { name: 'Twitter', url: '#', icon: '<i class="fab fa-twitter"></i>' },
+                    { name: 'Instagram', url: '#', icon: '<i class="fab fa-instagram"></i>' },
+                    { name: 'YouTube', url: '#', icon: '<i class="fab fa-youtube"></i>' }
+                ]
+            },
+            navigation: [
+                { id: 'inicio', title: 'Inicio', isButton: false }, 
+                { id: 'historia', title: 'Historia', isButton: false },
+                { id: 'autoridades', title: 'Autoridades', isButton: false }, 
+                { id: 'gestiones', title: 'Gestiones', isButton: false },
+                { id: 'anuncios', title: 'Noticias', isButton: false }, 
+                { id: 'eventos', title: 'Eventos', isButton: false },
+                { id: 'servicios', title: 'Servicios', isButton: false }, 
+                { id: 'contacto', title: 'Contacto', isButton: true }
+            ],
+            sections: {
+                inicio: {
+                    hero: {
+                        title: "Trabajando por un Futuro Próspero para Santa Sofía",
+                        subtitle: "Unidos por el desarrollo, la seguridad y el bienestar de nuestra comunidad.",
+                        buttonText: "Conoce Nuestros Proyectos",
+                        buttonLink: "#gestiones",
+                        imageUrl: "https://images.unsplash.com/photo-1568402102922-6d3c87399434?q=80&w=2070&auto=format&fit=crop"
+                    },
+                    stats: [
+                        { number: '7,000+', text: 'Habitantes' },
+                        { number: '95%', text: 'Satisfacción ciudadana' },
+                        { number: '50+', text: 'Proyectos ejecutados' },
+                        { number: '12', text: 'Años de servicio' }
+                    ],
+                    quickLinks: [
+                        { title: 'Trámites y Servicios', text: 'Accede a todos nuestros servicios en línea de forma rápida y segura.', link: 'servicios', icon: '<i class="fas fa-file-alt text-2xl"></i>' },
+                        { title: 'Portal de Transparencia', text: 'Consulta la información pública de nuestra gestión municipal.', link: '#', icon: '<i class="fas fa-eye text-2xl"></i>' },
+                        { title: 'Noticias y Eventos', text: 'Mantente al día con las últimas novedades y actividades de Santa Sofía.', link: 'anuncios', icon: '<i class="fas fa-newspaper text-2xl"></i>' }
+                    ],
+                    testimonials: [
+                        { name: 'Juan Pérez', role: 'Vecino de Santa Sofía', text: 'La municipalidad ha realizado un excelente trabajo en mejorar nuestras calles y espacios públicos. ¡Gracias!', image: 'https://placehold.co/60x60/1e3a5f/ffffff?text=JP' },
+                        { name: 'María López', role: 'Comerciante local', text: 'Los programas de apoyo a pequeños negocios han sido fundamentales para el crecimiento de mi negocio.', image: 'https://placehold.co/60x60/1e3a5f/ffffff?text=ML' },
+                        { name: 'Carlos Ramírez', role: 'Presidente de AA.HH.', text: 'La comunicación con las autoridades es constante y efectiva. Se preocupan por nuestras necesidades.', image: 'https://placehold.co/60x60/1e3a5f/ffffff?text=CR' }
+                    ]
+                },
+                historia: {
+                    title: 'Nuestra Historia',
+                    subtitle: 'Conoce los orígenes y evolución de nuestro querido pueblo',
+                    imageUrl: 'https://placehold.co/576x382/1e3a5f/ffffff?text=VSS',
+                    mainText: 'La Villa Santa Sofía se ubica en la costa norte de Perú, en la margen derecha del río Chira. Este hermoso pueblo perteneció desde sus inicios en la quincena de abril de 1936, al distrito de Tamarindo. Luego en 1965, al crearse el distrito de Ignacio Escudero pasó a pertenecer políticamente a este distrito de la provincia de Sullana.',
+                    milestones: [
+                        { year: '1936', title: 'Fundación', text: 'Santa Sofía inicia como parte del distrito de Tamarindo, estableciéndose como una comunidad próspera.' },
+                        { year: '1965', title: 'Reorganización', text: 'Pasa a formar parte del nuevo distrito de Ignacio Escudero en la provincia de Sullana.' },
+                        { year: '2025', title: 'Municipalidad', text: 'Se constituye con su propia municipalidad, marcando una nueva era de desarrollo autónomo.' }
+                    ]
+                },
+                autoridades: {
+                    title: 'Nuestras Autoridades',
+                    subtitle: 'Conoce al equipo que lidera nuestra gestión municipal',
+                    alcalde: { name: 'Pool Renato Nizama Alcas', period: '2025 - 2026', bio: 'Comprometido con el progreso de Santa Sofía.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=Alcalde' },
+                    regidores: [
+                        { name: 'Max Castillo Alejabo', bio: 'Desarrollo social.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=MC' },
+                        { name: 'Nayeli Noemí Crisanto Coronado', bio: 'Infraestructura.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=NC' },
+                        { name: 'Brenda Chero Castro', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=BC' },
+                        { name: 'José Ersiquio Cruz Socola', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=JC' },
+                        { name: 'Eduardo Chero More', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=EC' }
+                    ]
+                },
+                gestiones: {
+                    title: 'Nuestras Gestiones',
+                    subtitle: 'Seguimiento transparente de nuestros proyectos y logros más importantes para la comunidad.',
+                    projects: [
+                        { title: 'Mejoramiento de Vías', status: 'En Ejecución', description: 'Modernización y pavimentación de las principales calles para mejorar la transitabilidad.', imageUrl: 'https://images.unsplash.com/photo-1541832067-803215024766?q=80&w=400&auto=format&fit=crop', progress: 65 },
+                        { title: 'Centro de Salud Comunitario', status: 'Planificado', description: 'Construcción de un nuevo centro de salud para ampliar la cobertura médica en la zona.', imageUrl: 'https://images.unsplash.com/photo-1586773860414-72d22b88e5a2?q=80&w=400&auto=format&fit=crop', progress: 0 },
+                        { title: 'Parque Recreacional Central', status: 'Completado', description: 'Creación de un espacio verde para el esparcimiento familiar y la práctica deportiva.', imageUrl: 'https://images.unsplash.com/photo-1610065091214-4695b875223e?q=80&w=400&auto=format&fit=crop', progress: 100 }
+                    ]
+                },
+                servicios: {
+                    title: 'Servicios Municipales',
+                    subtitle: 'Descubre los servicios que ofrecemos para facilitar tus trámites y mejorar tu calidad de vida.',
+                    items: [
+                        { title: 'Registro Civil', description: 'Inscripción de nacimientos, matrimonios y defunciones.', icon: '<i class="fas fa-user-friends"></i>' },
+                        { title: 'Licencias y Permisos', description: 'Gestión de licencias de construcción y funcionamiento de negocios.', icon: '<i class="fas fa-file-contract"></i>' },
+                        { title: 'Pagos de Impuestos', description: 'Realiza el pago de tus impuestos prediales y arbitrios de forma segura.', icon: '<i class="fas fa-money-check-alt"></i>' },
+                        { title: 'Limpieza Pública', description: 'Coordinación del recojo de residuos y mantenimiento de áreas públicas.', icon: '<i class="fas fa-trash-alt"></i>' },
+                        { title: 'Seguridad Ciudadana', description: 'Programas de prevención y vigilancia para proteger a nuestra comunidad.', icon: '<i class="fas fa-shield-alt"></i>' },
+                        { title: 'Desarrollo Social', description: 'Apoyo a programas sociales para familias vulnerables de la localidad.', icon: '<i class="fas fa-hands-helping"></i>' }
+                    ]
+                },
+                anuncios: {
+                    title: 'Últimas Noticias y Anuncios',
+                    subtitle: 'Mantente informado sobre los comunicados y novedades más recientes de nuestra municipalidad.',
+                    items: [
+                        { title: 'Importante: Reunión Vecinal sobre Seguridad', date: '10 de Septiembre, 2025', content: 'Se convoca a todos los vecinos a la reunión sobre el nuevo plan de seguridad ciudadana que se realizará este viernes en el auditorio municipal.', imageUrl: 'https://images.unsplash.com/photo-1617223000908-174806a48f4b?q=80&w=400&auto=format&fit=crop' },
+                        { title: 'Nuevo Horario de Atención Municipal', date: '8 de Septiembre, 2025', content: 'A partir del lunes 15 de septiembre, la atención en ventanilla será de 8:00 am a 3:00 pm de lunes a viernes.', imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=400&auto=format&fit=crop' },
+                        { title: 'Gran Campaña de Limpieza General "Santa Sofía Limpia"', date: '5 de Septiembre, 2025', content: 'Este sábado 20 de septiembre participa en la gran campaña de limpieza "Santa Sofía Limpia y Saludable". ¡Te esperamos!', imageUrl: 'https://images.unsplash.com/photo-1611244419357-124d4218155a?q=80&w=400&auto=format&fit=crop' }
+                    ]
+                },
+                eventos: {
+                    title: 'Próximos Eventos',
+                    subtitle: 'Actividades programadas para nuestra comunidad',
+                    items: [
+                        { title: 'Feria Gastronómica "Sabores de mi Tierra"', date: '25 de Septiembre', time: '4:00 PM', location: 'Plaza Principal', imageUrl: 'https://images.unsplash.com/photo-1579630389953-248c88e5352c?q=80&w=400&auto=format&fit=crop' },
+                        { title: 'Campeonato Deportivo Interbarrios', date: '02 de Octubre', time: '8:00 AM', location: 'Complejo Deportivo', imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=400&auto=format&fit=crop' },
+                        { title: 'Taller para Emprendedores', date: '15 de Octubre', time: '2:00 PM', location: 'Auditorio Municipal', imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop' }
+                    ]
+                },
+                 contacto: {
+                    title: 'Contacto',
+                    subtitle: 'Estamos aquí para ayudarte. Comunícate con nosotros a través de los siguientes canales.',
+                    address: 'Plaza Principal S/N, Santa Sofía',
+                    phone: '+51 073 123456',
+                    email: 'contacto@santasofia.gob.pe',
+                    schedule: 'Lunes a Viernes: 8:00 AM - 5:00 PM'
+                },
+            },
+            footer: {
+                cta: {
+                    text: "Vive aquí. Juega aquí. Prospera aquí.",
+                    buttonText: "Descubre Santa Sofía",
+                    buttonLink: "#historia"
+                },
+                about: { title: 'Municipalidad de C.P. Santa Sofía', text: 'Trabajando por el desarrollo y bienestar de nuestra comunidad.' },
+                links: { title: 'Enlaces Útiles', items: ['Portal de Transparencia', 'Mesa de Partes Virtual', 'Libro de Reclamaciones'] },
+            }
+        };
+
+        // ===================================================================================
+        // LÓGICA DEL SITIO (NO ES NECESARIO MODIFICAR)
+        // ===================================================================================
+        function renderTopBar() {
+            const topBarData = siteData.topBar;
+            const topBarHtml = `
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                    <div class="flex items-center space-x-4">
+                        <span class="flex items-center gap-1.5"><i class="fas fa-phone text-orange-400"></i> <span class="hidden sm:inline">${topBarData.phone}</span></span>
+                        <span class="hidden sm:inline">|</span>
+                        <span class="flex items-center gap-1.5"><i class="fas fa-envelope text-orange-400"></i> <span class="hidden sm:inline">${topBarData.email}</span></span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        ${topBarData.social.map(s => `<a href="${s.url}" title="${s.name}" class="social-icon hover:bg-orange-500">${s.icon}</a>`).join('')}
+                    </div>
+                </div>`;
+            document.getElementById('top-bar').innerHTML = topBarHtml;
+        }
+
+        function renderNavigation() {
+            let navHtml = '';
+            let mobileNavHtml = '';
+
+            siteData.navigation.forEach(link => {
+                if (link.isButton) {
+                    navHtml += `<a href="#${link.id}" class="btn-primary text-sm" onclick="showSection('${link.id}', event)">${link.title}</a>`;
+                    mobileNavHtml += `<a href="#${link.id}" class="btn-primary block text-center" onclick="showSection('${link.id}', event)">${link.title}</a>`;
+                } else {
+                    navHtml += `<a href="#${link.id}" class="nav-link text-slate-700 hover:text-orange-500 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium" onclick="showSection('${link.id}', event)">${link.title}</a>`;
+                    mobileNavHtml += `<a href="#${link.id}" class="nav-link text-slate-700 hover:bg-slate-100 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium" onclick="showSection('${link.id}', event)">${link.title}</a>`;
+                }
+            });
+            
+            document.getElementById('desktop-nav').innerHTML = navHtml;
+            document.getElementById('mobile-nav').innerHTML = mobileNavHtml;
+        }
+
+        function renderSections() {
+            const main = document.querySelector('main');
+            main.innerHTML = '';
+            
+            for (const key in siteData.sections) {
+                if(!siteData.navigation.some(nav => nav.id === key)) continue;
+
+                const sectionData = siteData.sections[key];
+                const section = document.createElement('section');
+                section.id = key;
+                
+                let contentHtml = '';
+
+                if (key === 'inicio') {
+                    section.className = 'section hero-section relative text-white text-center';
+                    section.style.backgroundImage = `url('${sectionData.hero.imageUrl}')`;
+                    contentHtml = `
+                        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">${sectionData.hero.title}</h1>
+                            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-slate-100">${sectionData.hero.subtitle}</p>
+                            <a href="${sectionData.hero.buttonLink}" class="btn-primary" onclick="showSection('${sectionData.hero.buttonLink.substring(1)}', event)">${sectionData.hero.buttonText}</a>
+                        </div>
+                        
+                        <!-- Stats Section -->
+                        <div class="bg-white py-16 relative z-10">
+                            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                                    ${sectionData.stats.map(stat => `
+                                        <div class="counter-item">
+                                            <div class="counter-number">${stat.number}</div>
+                                            <div class="counter-text">${stat.text}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Links Section -->
+                        <div class="bg-slate-50 py-16 relative">
+                            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                                <h2 class="section-title">Servicios Rápidos</h2>
+                                <p class="section-subtitle">Accede a los servicios más solicitados por nuestros vecinos</p>
+                                <div class="grid md:grid-cols-3 gap-8">
+                                    ${sectionData.quickLinks.map(card => `
+                                        <div class="card bg-white p-8 text-center cursor-pointer hover:shadow-lg" onclick="showSection('${card.link}')">
+                                            <div class="feature-icon">
+                                                ${card.icon}
+                                            </div>
+                                            <h3 class="text-xl font-bold text-slate-800 mb-4">${card.title}</h3>
+                                            <p class="text-slate-600">${card.text}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonials Section -->
+                        <div class="py-16 bg-white relative">
+                            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                                <h2 class="section-title">Lo que dicen nuestros vecinos</h2>
+                                <p class="section-subtitle">Testimonios de la comunidad sobre nuestro trabajo</p>
+                                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                                    ${sectionData.testimonials.map(testimonial => `
+                                        <div class="testimonial-card">
+                                            <div class="flex items-center mb-4">
+                                                <img src="${testimonial.image}" alt="${testimonial.name}" class="w-12 h-12 rounded-full mr-4">
+                                                <div>
+                                                    <h4 class="font-bold text-slate-800">${testimonial.name}</h4>
+                                                    <p class="text-sm text-slate-500">${testimonial.role}</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-slate-600">${testimonial.text}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>`;
+                } else {
+                    section.className = 'section hidden py-16 md:py-24';
+                    contentHtml = `<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 class="section-title">${sectionData.title}</h2>
+                        <p class="section-subtitle">${sectionData.subtitle}</p>`;
+
+                    switch (key) {
+                        case 'historia':
+                            contentHtml += `<div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
+                                <div class="lg:w-1/2">
+                                    <img src="${sectionData.imageUrl}" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                                </div>
+                                <div class="lg:w-1/2">
+                                    <p class="mb-8 text-slate-600 text-lg leading-relaxed">${sectionData.mainText}</p>
+                                    <div class="space-y-8">
+                                    ${sectionData.milestones.map(item => `
+                                        <div class="flex">
+                                            <div class="mr-6">
+                                                <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center">
+                                                    <span class="text-orange-600 font-bold">${item.year}</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-slate-800">${item.title}</h3>
+                                                <p class="text-slate-600 mt-1">${item.text}</p>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                    </div>
+                                </div>
+                            </div>`;
+                            break;
+
+                        case 'autoridades':
+                            contentHtml += `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                                <div class="sm:col-span-2 lg:col-span-4 card bg-white border border-slate-100 rounded-lg p-8 flex flex-col md:flex-row items-center gap-8 mb-8">
+                                    <img src="${sectionData.alcalde.imageUrl}" class="w-40 h-40 rounded-full object-cover flex-shrink-0 border-4 border-orange-100">
+                                    <div class="text-center md:text-left">
+                                        <h3 class="text-2xl font-bold text-orange-600">Alcalde</h3>
+                                        <h4 class="text-xl font-semibold mt-1 text-slate-800">${sectionData.alcalde.name}</h4>
+                                        <p class="text-sm text-slate-500 mb-2">Periodo: ${sectionData.alcalde.period}</p>
+                                        <p class="mt-2 text-slate-600">${sectionData.alcalde.bio}</p>
+                                    </div>
+                                </div>
+                                ${sectionData.regidores.map(regidor => `
+                                    <div class="card bg-white border border-slate-100 rounded-lg p-6 text-center">
+                                        <img src="${regidor.imageUrl}" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-orange-100">
+                                        <h4 class="text-lg font-semibold text-slate-800">${regidor.name}</h4>
+                                        <p class="mt-1 text-sm text-slate-500">${regidor.bio}</p>
+                                    </div>
+                                `).join('')}
+                            </div>`;
+                            break;
+                        
+                        case 'gestiones':
+                             const statusStyles = { 
+                                 'Planificado': 'bg-yellow-100 text-yellow-800', 
+                                 'En Ejecución': 'bg-blue-100 text-blue-800', 
+                                 'Completado': 'bg-green-100 text-green-800' 
+                             };
+                            contentHtml += `<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                ${sectionData.projects.map(p => `
+                                    <div class="card bg-white rounded-lg overflow-hidden border border-slate-100 flex flex-col">
+                                        <img src="${p.imageUrl}" class="h-48 w-full object-cover">
+                                        <div class="p-6 flex flex-col flex-grow">
+                                            <span class="text-xs font-bold px-3 py-1 rounded-full self-start ${statusStyles[p.status] || ''}">${p.status}</span>
+                                            <h3 class="text-lg font-bold text-slate-800 mt-4">${p.title}</h3>
+                                            <p class="text-sm text-slate-600 mt-2 flex-grow">${p.description}</p>
+                                            ${p.progress > 0 ? `
+                                            <div class="mt-4">
+                                                <div class="flex justify-between mb-1"><span class="text-sm font-medium text-slate-700">Progreso</span><span class="text-sm font-medium text-slate-700">${p.progress}%</span></div>
+                                                <div class="progress-bar"><div class="progress-value" style="width: ${p.progress}%"></div></div>
+                                            </div>` : ''}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>`;
+                            break;
+
+                        case 'servicios':
+                            contentHtml += `<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                ${sectionData.items.map(item => `
+                                <div class="card bg-white p-6 rounded-lg border border-slate-100 text-center hover:shadow-lg">
+                                    <div class="text-orange-500 text-2xl inline-block p-4 bg-orange-50 rounded-full mb-4">
+                                        ${item.icon}
+                                    </div>
+                                    <h3 class="text-lg font-bold text-slate-800 mb-2">${item.title}</h3>
+                                    <p class="text-sm text-slate-600">${item.description}</p>
+                                </div>
+                                `).join('')}
+                            </div>`;
+                            break;
+
+                        case 'anuncios':
+                            contentHtml += `<div class="max-w-5xl mx-auto space-y-8">
+                                ${sectionData.items.map(item => `
+                                    <a href="#" class="announcement-card card bg-white p-4 rounded-lg border border-slate-100 flex flex-col md:flex-row items-center gap-6 block hover:shadow-md">
+                                        <img src="${item.imageUrl}" class="w-full md:w-48 h-48 md:h-32 object-cover rounded-md flex-shrink-0">
+                                        <div class="flex-grow">
+                                            <p class="text-xs text-slate-500 mb-1"><i class="far fa-calendar-alt mr-2"></i>${item.date}</p>
+                                            <h3 class="announcement-title text-xl font-bold text-slate-800 transition-colors mb-2">${item.title}</h3>
+                                            <p class="text-slate-600">${item.content}</p>
+                                            <button class="btn-outline mt-4 text-sm">Leer más</button>
+                                        </div>
+                                    </a>
+                                `).join('')}
+                            </div>`;
+                            break;
+                        
+                        case 'eventos':
+                            contentHtml += `<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                ${sectionData.items.map(item => `
+                                    <div class="card bg-white rounded-lg overflow-hidden flex flex-col border border-slate-100 hover:shadow-md">
+                                        <img src="${item.imageUrl}" class="h-48 w-full object-cover">
+                                        <div class="p-5 flex-grow">
+                                            <h3 class="text-lg font-bold text-slate-800 mb-2">${item.title}</h3>
+                                            <div class="text-sm text-slate-600 space-y-2">
+                                                <p class="flex items-center"><i class="far fa-calendar-alt text-orange-500 mr-2"></i> ${item.date} - ${item.time}</p>
+                                                <p class="flex items-center"><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i> ${item.location}</p>
+                                            </div>
+                                            <button class="btn-outline w-full mt-4 text-sm">Más información</button>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>`;
+                            break;
+                        
+                        case 'contacto':
+                            contentHtml += `<div class="grid md:grid-cols-5 gap-8">
+                                <div class="md:col-span-2 card bg-white border border-slate-100 rounded-lg p-6 space-y-6">
+                                    <h3 class="text-2xl font-bold text-slate-800">Información de Contacto</h3>
+                                    <div class="flex items-start">
+                                        <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                            <i class="fas fa-map-marker-alt text-orange-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-800">Dirección</h4>
+                                            <p class="text-slate-600">${sectionData.address}</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                            <i class="fas fa-phone text-orange-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-800">Teléfono</h4>
+                                            <p class="text-slate-600">${sectionData.phone}</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                            <i class="fas fa-envelope text-orange-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-800">Email</h4>
+                                            <p class="text-slate-600">${sectionData.email}</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                            <i class="fas fa-clock text-orange-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-800">Horario de Atención</h4>
+                                            <p class="text-slate-600">${sectionData.schedule}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-3 card bg-white border border-slate-100 rounded-lg p-6">
+                                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Envíanos un Mensaje</h3>
+                                    <form class="space-y-4" onsubmit="submitContactForm(event)">
+                                        <div class="grid sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="font-semibold text-slate-600 block mb-2">Nombre:</label>
+                                                <input type="text" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                                            </div>
+                                            <div>
+                                                <label class="font-semibold text-slate-600 block mb-2">Email:</label>
+                                                <input type="email" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="font-semibold text-slate-600 block mb-2">Asunto:</label>
+                                            <input type="text" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                                        </div>
+                                        <div>
+                                            <label class="font-semibold text-slate-600 block mb-2">Mensaje:</label>
+                                            <textarea rows="5" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn-primary w-full">Enviar Mensaje</button>
+                                    </form>
+                                </div>
+                            </div>`;
+                            break;
+                    }
+                    contentHtml += '</div>';
+                }
+                section.innerHTML = contentHtml;
+                main.appendChild(section);
+            }
+        }
+        
+        function renderFooter() {
+            const footer = siteData.footer;
+            const cta = footer.cta;
+            
+            document.getElementById('footer-cta').innerHTML = `
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white text-center md:text-left mb-4 md:mb-0">${cta.text}</h2>
+                    <a href="${cta.buttonLink}" class="btn-outline bg-transparent border-white text-white hover:bg-white hover:text-orange-600" onclick="showSection('${cta.buttonLink.substring(1)}', event)">${cta.buttonText}</a>
+                </div>`;
+            
+            const footerHtml = `
+                <div class="md:col-span-2">
+                    <h3 class="font-bold text-lg mb-4 text-white">${footer.about.title}</h3>
+                    <p class="text-slate-300 pr-8 mb-6">${footer.about.text}</p>
+                    <div class="flex space-x-4">
+                        ${siteData.topBar.social.map(s => `<a href="${s.url}" title="${s.name}" class="social-icon">${s.icon}</a>`).join('')}
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-white">${footer.links.title}</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        ${footer.links.items.map(l => `<li><a href="#" class="hover:text-orange-400 transition-colors"><i class="fas fa-arrow-right text-orange-400 mr-2"></i>${l}</a></li>`).join('')}
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-white">Horario de Atención</h3>
+                    <p class="text-slate-300 mb-2"><i class="far fa-clock text-orange-400 mr-2"></i> Lunes a Viernes</p>
+                    <p class="text-slate-300 mb-4">8:00 AM - 5:00 PM</p>
+                    <p class="text-slate-300 mb-2"><i class="far fa-clock text-orange-400 mr-2"></i> Sábados</p>
+                    <p class="text-slate-300">9:00 AM - 1:00 PM</p>
+                </div>
+            `;
+            document.getElementById('footer-content').innerHTML = footerHtml;
+        }
+
+        function renderAll() {
+            document.getElementById('logo').src = siteData.logoUrl;
+            renderTopBar();
+            renderNavigation();
+            renderSections();
+            renderFooter();
+            const hash = window.location.hash.substring(1);
+            const activeSection = siteData.navigation.some(item => item.id === hash) ? hash : 'inicio';
+            updateActiveNav(activeSection);
+        }
+
+        function showSection(sectionId, event) {
+            if(event) event.preventDefault();
+            const targetId = sectionId.startsWith('#') ? sectionId.substring(1) : sectionId;
+            
+            if (!document.getElementById(targetId)) return;
+
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(targetId)?.classList.add('active');
+            
+            if(window.location.hash !== `#${targetId}`) {
+                window.location.hash = targetId;
+            } else {
+                 updateActiveNav(targetId);
+            }
+            
+            document.getElementById('mobile-menu').classList.add('hidden');
+            //window.scrollTo(0, 0);
+        }
+        
+        function updateActiveNav(sectionId) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + sectionId);
+            });
+        }
+        
+        function submitContactForm(event) {
+            event.preventDefault();
+            alert('¡Gracias por contactarnos! Tu mensaje ha sido enviado exitosamente.');
+            event.target.reset();
+        }
+
+        // Back to top functionality
+        function setupBackToTop() {
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAll();
+            document.getElementById('mobile-menu-button').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+            const hash = window.location.hash.substring(1);
+            showSection(hash || 'inicio');
+            setupBackToTop();
+        });
+
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.substring(1);
+            showSection(hash || 'inicio');
+        });
+    </script>
+</body>
+</html>
