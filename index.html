@@ -11,31 +11,27 @@
     <meta property="og:description" content="Sitio oficial de la Municipalidad de Centro Poblado Santa Sofía">
     <meta property="og:type" content="website">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom Styles -->
     <style>
         :root {
-            --primary: #1e3a5f;
-            --secondary: #f97316;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --accent: #3b82f6;
+            --primary: #2c3e50;    /* Azul Noche */
+            --secondary: #d35400;  /* Naranja Terracota */
+            --light: #f8fafc;      /* Gris Claro */
+            --dark: #34495e;       /* Gris Asfalto / Color de texto principal */
+            --accent: #3498db;     /* Azul Cielo */
         }
         
         body {
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
-            color: #334155;
+            color: var(--dark);
         }
         
         .section.active {
@@ -68,11 +64,12 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 12px;
             overflow: hidden;
+            border: 1px solid #e2e8f0;
         }
         
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.07);
         }
         
         .hero-section {
@@ -88,7 +85,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, rgba(30, 58, 95, 0.85) 0%, rgba(30, 58, 95, 0.7) 100%);
+            background: linear-gradient(90deg, rgba(44, 62, 80, 0.85) 0%, rgba(44, 62, 80, 0.7) 100%);
         }
 
         .hero-section-banner {
@@ -150,9 +147,9 @@
         }
         
         .btn-primary:hover {
-            background-color: #ea580c;
+            background-color: #e67e22; /* Tono más brillante del secundario */
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+            box-shadow: 0 10px 20px rgba(211, 84, 0, 0.2);
         }
         
         .btn-outline {
@@ -205,7 +202,7 @@
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            background-color: rgba(249, 115, 22, 0.1);
+            background-color: rgba(211, 84, 0, 0.1);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -292,33 +289,25 @@
 </head>
 <body class="text-slate-700">
 
-    <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <!-- Top Bar -->
-        <div id="top-bar" class="bg-[#1e3a5f] text-white text-sm py-2">
-            <!-- Top bar content will be injected by JavaScript -->
-        </div>
+        <div id="top-bar" class="bg-[var(--primary)] text-white text-sm py-2">
+            </div>
 
-        <!-- Main Navigation -->
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24">
-                <!-- Logo -->
                 <div class="flex items-center space-x-4">
                     <img src="assets/logo_munisantasofia.png" alt="Logo Municipalidad" id="logo" class="border-0 p-0" style="width: 84px; height: auto;">
                     <div class="logo-text">
-                        <h1 class="text-lg md:text-xl font-bold tracking-tight text-[#1e3a5f]">Municipalidad C.P. Santa Sofía</h1>
+                        <h1 class="text-lg md:text-xl font-bold tracking-tight text-[var(--primary)]">Municipalidad C.P. Santa Sofía</h1>
                         <p class="text-xs md:text-sm text-slate-500">Ignacio Escudero</p>
                     </div>
                 </div>
 
-                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8" id="desktop-nav">
-                    <!-- Links will be injected by JavaScript -->
-                </nav>
+                    </nav>
 
-                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-slate-700 hover:text-orange-500 focus:outline-none">
+                    <button id="mobile-menu-button" class="text-slate-700 hover:text-[var(--secondary)] focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
@@ -327,37 +316,28 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-200 shadow-lg">
             <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3" id="mobile-nav">
-                <!-- Mobile links will be injected by JavaScript -->
-            </nav>
+                </nav>
         </div>
     </header>
     
-    <!-- Main Content -->
     <main>
-        <!-- Sections will be rendered here by JavaScript -->
-    </main>
+        </main>
     
-    <!-- Footer -->
-    <footer class="bg-[#1e3a5f] text-white">
-        <!-- CTA Section -->
-        <div id="footer-cta" class="bg-[#f97316]">
-            <!-- Footer CTA will be injected by JavaScript -->
-        </div>
+    <footer class="bg-[var(--primary)] text-white">
+        <div id="footer-cta" class="bg-[var(--secondary)]">
+            </div>
 
         <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div id="footer-content" class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Footer content will be injected by JavaScript -->
-            </div>
+                </div>
             <div class="mt-12 border-t border-slate-700 pt-8 text-center text-slate-300 text-sm">
                 <p>&copy; 2025 Municipalidad de Centro Poblado Santa Sofía. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
@@ -409,9 +389,9 @@
                         { title: 'Noticias y Eventos', text: 'Mantente al día con las últimas novedades y actividades de Santa Sofía.', link: 'anuncios', icon: '<i class="fas fa-newspaper text-2xl"></i>' }
                     ],
                     testimonials: [
-                        { name: 'Juan Pérez', role: 'Vecino de Santa Sofía', text: 'La municipalidad ha realizado un excelente trabajo en mejorar nuestras calles y espacios públicos. ¡Gracias!', image: 'https://placehold.co/60x60/1e3a5f/ffffff?text=JP' },
-                        { name: 'María López', role: 'Comerciante local', text: 'Los programas de apoyo a pequeños negocios han sido fundamentales para el crecimiento de mi negocio.', image: 'https://placehold.co/60x60/1e3a5f/ffffff?text=ML' },
-                        { name: 'Carlos Ramírez', role: 'Presidente de AA.HH.', text: 'La comunicación con las autoridades es constante y efectiva. Se preocupan por nuestras necesidades.', image: 'https://placehold.co/60x60/1e3a5f/ffffff?text=CR' }
+                        { name: 'Juan Pérez', role: 'Vecino de Santa Sofía', text: 'La municipalidad ha realizado un excelente trabajo en mejorar nuestras calles y espacios públicos. ¡Gracias!', image: 'https://placehold.co/60x60/2c3e50/ffffff?text=JP' },
+                        { name: 'María López', role: 'Comerciante local', text: 'Los programas de apoyo a pequeños negocios han sido fundamentales para el crecimiento de mi negocio.', image: 'https://placehold.co/60x60/2c3e50/ffffff?text=ML' },
+                        { name: 'Carlos Ramírez', role: 'Presidente de AA.HH.', text: 'La comunicación con las autoridades es constante y efectiva. Se preocupan por nuestras necesidades.', image: 'https://placehold.co/60x60/2c3e50/ffffff?text=CR' }
                     ]
                 },
                 historia: {
@@ -428,13 +408,13 @@
                 autoridades: {
                     title: 'Nuestras Autoridades',
                     subtitle: 'Conoce al equipo que lidera nuestra gestión municipal',
-                    alcalde: { name: 'Pool Renato Nizama Alcas', period: '2025 - 2026', bio: 'Comprometido con el progreso de Santa Sofía.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=Alcalde' },
+                    alcalde: { name: 'Pool Renato Nizama Alcas', period: '2025 - 2026', bio: 'Comprometido con el progreso de Santa Sofía.', imageUrl: 'https://placehold.co/400x400/2c3e50/ffffff?text=Alcalde' },
                     regidores: [
-                        { name: 'Max Castillo Alejabo', bio: 'Desarrollo social.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=MC' },
-                        { name: 'Nayeli Noemí Crisanto Coronado', bio: 'Infraestructura.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=NC' },
-                        { name: 'Brenda Chero Castro', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=BC' },
-                        { name: 'José Ersiquio Cruz Socola', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=JC' },
-                        { name: 'Eduardo Chero More', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/1e3a5f/ffffff?text=EC' }
+                        { name: 'Max Castillo Alejabo', bio: 'Desarrollo social.', imageUrl: 'https://placehold.co/400x400/2c3e50/ffffff?text=MC' },
+                        { name: 'Nayeli Noemí Crisanto Coronado', bio: 'Infraestructura.', imageUrl: 'https://placehold.co/400x400/2c3e50/ffffff?text=NC' },
+                        { name: 'Brenda Chero Castro', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/2c3e50/ffffff?text=BC' },
+                        { name: 'José Ersiquio Cruz Socola', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/2c3e50/ffffff?text=JC' },
+                        { name: 'Eduardo Chero More', bio: 'Cultura y deporte.', imageUrl: 'https://placehold.co/400x400/2c3e50/ffffff?text=EC' }
                     ]
                 },
                 gestiones: {
@@ -504,12 +484,12 @@
             const topBarHtml = `
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
                     <div class="flex items-center space-x-4">
-                        <span class="flex items-center gap-1.5"><i class="fas fa-phone text-orange-400"></i> <span class="hidden sm:inline">${topBarData.phone}</span></span>
+                        <span class="flex items-center gap-1.5"><i class="fas fa-phone text-[var(--secondary)]"></i> <span class="hidden sm:inline">${topBarData.phone}</span></span>
                         <span class="hidden sm:inline">|</span>
-                        <span class="flex items-center gap-1.5"><i class="fas fa-envelope text-orange-400"></i> <span class="hidden sm:inline">${topBarData.email}</span></span>
+                        <span class="flex items-center gap-1.5"><i class="fas fa-envelope text-[var(--secondary)]"></i> <span class="hidden sm:inline">${topBarData.email}</span></span>
                     </div>
                     <div class="flex items-center space-x-3">
-                        ${topBarData.social.map(s => `<a href="${s.url}" title="${s.name}" class="social-icon hover:bg-orange-500">${s.icon}</a>`).join('')}
+                        ${topBarData.social.map(s => `<a href="${s.url}" title="${s.name}" class="social-icon hover:bg-[var(--secondary)]">${s.icon}</a>`).join('')}
                     </div>
                 </div>`;
             document.getElementById('top-bar').innerHTML = topBarHtml;
@@ -524,8 +504,8 @@
                     navHtml += `<a href="#${link.id}" class="btn-primary text-sm" onclick="showSection('${link.id}', event)">${link.title}</a>`;
                     mobileNavHtml += `<a href="#${link.id}" class="btn-primary block text-center" onclick="showSection('${link.id}', event)">${link.title}</a>`;
                 } else {
-                    navHtml += `<a href="#${link.id}" class="nav-link text-slate-700 hover:text-orange-500 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium" onclick="showSection('${link.id}', event)">${link.title}</a>`;
-                    mobileNavHtml += `<a href="#${link.id}" class="nav-link text-slate-700 hover:bg-slate-100 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium" onclick="showSection('${link.id}', event)">${link.title}</a>`;
+                    navHtml += `<a href="#${link.id}" class="nav-link text-slate-700 hover:text-[var(--secondary)] transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium" onclick="showSection('${link.id}', event)">${link.title}</a>`;
+                    mobileNavHtml += `<a href="#${link.id}" class="nav-link text-slate-700 hover:bg-slate-100 hover:text-[var(--secondary)] block px-3 py-2 rounded-md text-base font-medium" onclick="showSection('${link.id}', event)">${link.title}</a>`;
                 }
             });
             
@@ -556,7 +536,6 @@
                             <a href="${sectionData.hero.buttonLink}" class="btn-primary" onclick="showSection('${sectionData.hero.buttonLink.substring(1)}', event)">${sectionData.hero.buttonText}</a>
                         </div>
                         
-                        <!-- Stats Section -->
                         <div class="bg-white py-16 relative z-10">
                             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
@@ -570,14 +549,13 @@
                             </div>
                         </div>
                         
-                        <!-- Quick Links Section -->
                         <div class="bg-slate-50 py-16 relative">
                             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                                 <h2 class="section-title">Servicios Rápidos</h2>
                                 <p class="section-subtitle">Accede a los servicios más solicitados por nuestros vecinos</p>
                                 <div class="grid md:grid-cols-3 gap-8">
                                     ${sectionData.quickLinks.map(card => `
-                                        <div class="card bg-white p-8 text-center cursor-pointer hover:shadow-lg" onclick="showSection('${card.link}')">
+                                        <div class="card bg-white p-8 text-center cursor-pointer" onclick="showSection('${card.link}')">
                                             <div class="feature-icon">
                                                 ${card.icon}
                                             </div>
@@ -589,7 +567,6 @@
                             </div>
                         </div>
                         
-                        <!-- Testimonials Section -->
                         <div class="py-16 bg-white relative">
                             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                                 <h2 class="section-title">Lo que dicen nuestros vecinos</h2>
@@ -628,8 +605,8 @@
                                     ${sectionData.milestones.map(item => `
                                         <div class="flex">
                                             <div class="mr-6">
-                                                <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center">
-                                                    <span class="text-orange-600 font-bold">${item.year}</span>
+                                                <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center" style="background-color: rgba(211, 84, 0, 0.1);">
+                                                    <span class="font-bold text-[var(--secondary)]">${item.year}</span>
                                                 </div>
                                             </div>
                                             <div>
@@ -644,19 +621,20 @@
                             break;
 
                         case 'autoridades':
+                            const memberCardBg = 'rgba(211, 84, 0, 0.05)';
                             contentHtml += `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-                                <div class="sm:col-span-2 lg:col-span-4 card bg-white border border-slate-100 rounded-lg p-8 flex flex-col md:flex-row items-center gap-8 mb-1">
-                                    <img src="${sectionData.alcalde.imageUrl}" class="w-40 h-40 rounded-full object-cover flex-shrink-0 border-4 border-orange-100">
+                                <div class="sm:col-span-2 lg:col-span-4 card bg-white rounded-lg p-8 flex flex-col md:flex-row items-center gap-8 mb-1">
+                                    <img src="${sectionData.alcalde.imageUrl}" class="w-40 h-40 rounded-full object-cover flex-shrink-0 border-4" style="border-color: ${memberCardBg}">
                                     <div class="text-center md:text-left">
-                                        <h3 class="text-2xl font-bold text-orange-600">Alcalde</h3>
+                                        <h3 class="text-2xl font-bold text-[var(--secondary)]">Alcalde</h3>
                                         <h4 class="text-xl font-semibold mt-1 text-slate-800">${sectionData.alcalde.name}</h4>
                                         <p class="text-sm text-slate-500 mb-2">Periodo: ${sectionData.alcalde.period}</p>
                                         <p class="mt-2 text-slate-600">${sectionData.alcalde.bio}</p>
                                     </div>
                                 </div>
                                 ${sectionData.regidores.map(regidor => `
-                                    <div class="card bg-white border border-slate-100 rounded-lg p-6 text-center">
-                                        <img src="${regidor.imageUrl}" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-orange-100">
+                                    <div class="card bg-white rounded-lg p-6 text-center">
+                                        <img src="${regidor.imageUrl}" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4" style="border-color: ${memberCardBg}">
                                         <h4 class="text-lg font-semibold text-slate-800">${regidor.name}</h4>
                                         <p class="mt-1 text-sm text-slate-500">${regidor.bio}</p>
                                     </div>
@@ -672,7 +650,7 @@
                              };
                             contentHtml += `<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 ${sectionData.projects.map(p => `
-                                    <div class="card bg-white rounded-lg overflow-hidden border border-slate-100 flex flex-col">
+                                    <div class="card bg-white rounded-lg overflow-hidden flex flex-col">
                                         <img src="${p.imageUrl}" class="h-48 w-full object-cover">
                                         <div class="p-6 flex flex-col flex-grow">
                                             <span class="text-xs font-bold px-3 py-1 rounded-full self-start ${statusStyles[p.status] || ''}">${p.status}</span>
@@ -692,8 +670,8 @@
                         case 'servicios':
                             contentHtml += `<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                                 ${sectionData.items.map(item => `
-                                <div class="card bg-white p-6 rounded-lg border border-slate-100 text-center hover:shadow-lg">
-                                    <div class="text-orange-500 text-2xl inline-block p-4 bg-orange-50 rounded-full mb-4">
+                                <div class="card bg-white p-6 rounded-lg text-center hover:shadow-lg">
+                                    <div class="text-[var(--secondary)] text-2xl inline-block p-4 bg-orange-50 rounded-full mb-4" style="background-color: rgba(211, 84, 0, 0.1);">
                                         ${item.icon}
                                     </div>
                                     <h3 class="text-lg font-bold text-slate-800 mb-2">${item.title}</h3>
@@ -706,7 +684,7 @@
                         case 'anuncios':
                             contentHtml += `<div class="max-w-5xl mx-auto space-y-8">
                                 ${sectionData.items.map(item => `
-                                    <a href="#" class="announcement-card card bg-white p-4 rounded-lg border border-slate-100 flex flex-col md:flex-row items-center gap-6 block hover:shadow-md">
+                                    <a href="#" class="announcement-card card bg-white p-4 rounded-lg flex flex-col md:flex-row items-center gap-6 block hover:shadow-md">
                                         <img src="${item.imageUrl}" class="w-full md:w-48 h-48 md:h-32 object-cover rounded-md flex-shrink-0">
                                         <div class="flex-grow">
                                             <p class="text-xs text-slate-500 mb-1"><i class="far fa-calendar-alt mr-2"></i>${item.date}</p>
@@ -722,13 +700,13 @@
                         case 'eventos':
                             contentHtml += `<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 ${sectionData.items.map(item => `
-                                    <div class="card bg-white rounded-lg overflow-hidden flex flex-col border border-slate-100 hover:shadow-md">
+                                    <div class="card bg-white rounded-lg overflow-hidden flex flex-col hover:shadow-md">
                                         <img src="${item.imageUrl}" class="h-48 w-full object-cover">
                                         <div class="p-5 flex-grow">
                                             <h3 class="text-lg font-bold text-slate-800 mb-2">${item.title}</h3>
                                             <div class="text-sm text-slate-600 space-y-2">
-                                                <p class="flex items-center"><i class="far fa-calendar-alt text-orange-500 mr-2"></i> ${item.date} - ${item.time}</p>
-                                                <p class="flex items-center"><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i> ${item.location}</p>
+                                                <p class="flex items-center"><i class="far fa-calendar-alt text-[var(--secondary)] mr-2"></i> ${item.date} - ${item.time}</p>
+                                                <p class="flex items-center"><i class="fas fa-map-marker-alt text-[var(--secondary)] mr-2"></i> ${item.location}</p>
                                             </div>
                                             <button class="btn-outline w-full mt-4 text-sm">Más información</button>
                                         </div>
@@ -738,12 +716,13 @@
                             break;
                         
                         case 'contacto':
+                            const contactIconBg = 'rgba(211, 84, 0, 0.1)';
                             contentHtml += `<div class="grid md:grid-cols-5 gap-8">
-                                <div class="md:col-span-2 card bg-white border border-slate-100 rounded-lg p-6 space-y-6">
+                                <div class="md:col-span-2 card bg-white rounded-lg p-6 space-y-6">
                                     <h3 class="text-2xl font-bold text-slate-800">Información de Contacto</h3>
                                     <div class="flex items-start">
-                                        <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                            <i class="fas fa-map-marker-alt text-orange-600"></i>
+                                        <div class="p-3 rounded-full mr-4" style="background-color: ${contactIconBg}">
+                                            <i class="fas fa-map-marker-alt text-[var(--secondary)]"></i>
                                         </div>
                                         <div>
                                             <h4 class="font-semibold text-slate-800">Dirección</h4>
@@ -751,8 +730,8 @@
                                         </div>
                                     </div>
                                     <div class="flex items-start">
-                                        <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                            <i class="fas fa-phone text-orange-600"></i>
+                                        <div class="p-3 rounded-full mr-4" style="background-color: ${contactIconBg}">
+                                            <i class="fas fa-phone text-[var(--secondary)]"></i>
                                         </div>
                                         <div>
                                             <h4 class="font-semibold text-slate-800">Teléfono</h4>
@@ -760,8 +739,8 @@
                                         </div>
                                     </div>
                                     <div class="flex items-start">
-                                        <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                            <i class="fas fa-envelope text-orange-600"></i>
+                                        <div class="p-3 rounded-full mr-4" style="background-color: ${contactIconBg}">
+                                            <i class="fas fa-envelope text-[var(--secondary)]"></i>
                                         </div>
                                         <div>
                                             <h4 class="font-semibold text-slate-800">Email</h4>
@@ -769,8 +748,8 @@
                                         </div>
                                     </div>
                                     <div class="flex items-start">
-                                        <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                            <i class="fas fa-clock text-orange-600"></i>
+                                        <div class="p-3 rounded-full mr-4" style="background-color: ${contactIconBg}">
+                                            <i class="fas fa-clock text-[var(--secondary)]"></i>
                                         </div>
                                         <div>
                                             <h4 class="font-semibold text-slate-800">Horario de Atención</h4>
@@ -778,26 +757,26 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="md:col-span-3 card bg-white border border-slate-100 rounded-lg p-6">
+                                <div class="md:col-span-3 card bg-white rounded-lg p-6">
                                     <h3 class="text-2xl font-bold text-slate-800 mb-4">Envíanos un Mensaje</h3>
                                     <form class="space-y-4" onsubmit="submitContactForm(event)">
                                         <div class="grid sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label class="font-semibold text-slate-600 block mb-2">Nombre:</label>
-                                                <input type="text" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                                                <input type="text" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-[var(--secondary)] focus:border-transparent" required>
                                             </div>
                                             <div>
                                                 <label class="font-semibold text-slate-600 block mb-2">Email:</label>
-                                                <input type="email" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                                                <input type="email" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-[var(--secondary)] focus:border-transparent" required>
                                             </div>
                                         </div>
                                         <div>
                                             <label class="font-semibold text-slate-600 block mb-2">Asunto:</label>
-                                            <input type="text" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                                            <input type="text" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-[var(--secondary)] focus:border-transparent" required>
                                         </div>
                                         <div>
                                             <label class="font-semibold text-slate-600 block mb-2">Mensaje:</label>
-                                            <textarea rows="5" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" required></textarea>
+                                            <textarea rows="5" class="w-full border border-slate-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-[var(--secondary)] focus:border-transparent" required></textarea>
                                         </div>
                                         <button type="submit" class="btn-primary w-full">Enviar Mensaje</button>
                                     </form>
@@ -819,7 +798,7 @@
             document.getElementById('footer-cta').innerHTML = `
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white text-center md:text-left mb-4 md:mb-0">${cta.text}</h2>
-                    <a href="${cta.buttonLink}" class="btn-outline bg-transparent border-white text-white hover:bg-white hover:text-orange-600" onclick="showSection('${cta.buttonLink.substring(1)}', event)">${cta.buttonText}</a>
+                    <a href="${cta.buttonLink}" class="btn-outline bg-transparent border-white text-white hover:bg-white hover:text-[var(--secondary)]" onclick="showSection('${cta.buttonLink.substring(1)}', event)">${cta.buttonText}</a>
                 </div>`;
             
             const footerHtml = `
@@ -833,14 +812,14 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4 text-white">${footer.links.title}</h3>
                     <ul class="space-y-2 text-slate-300">
-                        ${footer.links.items.map(l => `<li><a href="#" class="hover:text-orange-400 transition-colors"><i class="fas fa-arrow-right text-orange-400 mr-2"></i>${l}</a></li>`).join('')}
+                        ${footer.links.items.map(l => `<li><a href="#" class="hover:text-[var(--secondary)] transition-colors"><i class="fas fa-arrow-right text-[var(--secondary)] mr-2"></i>${l}</a></li>`).join('')}
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-lg mb-4 text-white">Horario de Atención</h3>
-                    <p class="text-slate-300 mb-2"><i class="far fa-clock text-orange-400 mr-2"></i> Lunes a Viernes</p>
+                    <p class="text-slate-300 mb-2"><i class="far fa-clock text-[var(--secondary)] mr-2"></i> Lunes a Viernes</p>
                     <p class="text-slate-300 mb-4">8:00 AM - 5:00 PM</p>
-                    <p class="text-slate-300 mb-2"><i class="far fa-clock text-orange-400 mr-2"></i> Sábados</p>
+                    <p class="text-slate-300 mb-2"><i class="far fa-clock text-[var(--secondary)] mr-2"></i> Sábados</p>
                     <p class="text-slate-300">9:00 AM - 1:00 PM</p>
                 </div>
             `;
