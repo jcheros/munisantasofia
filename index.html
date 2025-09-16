@@ -378,13 +378,13 @@
                         subtitle: "Unidos por el desarrollo, la seguridad y el bienestar de nuestra comunidad.",
                         buttonText: "Conoce Nuestros Proyectos",
                         buttonLink: "#gestiones",
-                        imageUrl: "https://images.unsplash.com/photo-1568402102922-6d3c87399434?q=80&w=2070&auto=format&fit=crop"
+                        imageUrl: "assets/banner.png"
                     },
                     stats: [
                         { number: '7,000+', text: 'Habitantes' },
                         { number: '95%', text: 'Satisfacción ciudadana' },
-                        { number: '50+', text: 'Proyectos ejecutados' },
-                        { number: '12', text: 'Años de servicio' }
+                        { number: '5+', text: 'Proyectos ejecutados' },
+                        { number: '2', text: 'Años de servicio' }
                     ],
                     quickLinks: [
                         { title: 'Trámites y Servicios', text: 'Accede a todos nuestros servicios en línea de forma rápida y segura.', link: 'servicios', icon: '<i class="fas fa-file-alt text-2xl"></i>' },
@@ -532,6 +532,8 @@
                 if (key === 'inicio') {
                     section.className = 'section hero-section relative text-white text-center';
                     section.style.backgroundImage = `url('${sectionData.hero.imageUrl}')`;
+                    section.style.backgroundPosition = 'top';
+                    section.style.backgroundSize = 'contain';
                     contentHtml = `
                         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
                             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">${sectionData.hero.title}</h1>
